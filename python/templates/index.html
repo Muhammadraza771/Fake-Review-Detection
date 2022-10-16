@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GriffinAid E-Commerce Assistant</title>
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      .forminput {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+        font-size: 1.2rem;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+        border-radius: 0.2rem;
+        background-color: #f1efdc;
+        border: none;
+        width: 90%;
+        display: block;
+        border-bottom: 0.3rem solid transparent;
+        transition: all 0.3s;
+      }
+      .ring {
+        border: 20px solid rgb(211, 211, 211);
+        position: absolute;
+        left: 45%;
+        border-radius: 50%;
+        border-top: 20px solid red;
+        width: 120px;
+        height: 120px;
+        animation: spin 1s linear infinite;
+        margin-top: 50px;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .topnav {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      /* Style the links inside the navigation bar */
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      /* Change the color of links on hover */
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Add an active class to highlight the current page */
+      .topnav a.active {
+        background-color: #E64848;
+        color: white;
+      }
+
+      /* Hide the link that should open and close the topnav on small screens */
+      .topnav .icon {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+     
+      <a  class="active">GriffinAid E-Commerce Assistant</a>
+     
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <center>
+
+      <br><br><br>
+
+      <form action="{{url_for('scrap')}}" method="post" id="theform">
+        <input
+          type="text"
+          style="width: 800px"
+          name="reviewfield"
+          value=""
+          id="inputfield"
+          class="forminput"
+          <br
+        />
+        <br />
+        <input
+          type="submit"
+          style="
+            color: transparent;
+            background-color: transparent;
+            border-color: transparent;
+            cursor: default;
+          "
+        />
+      </form>
+    </center>
+
+    <script>
+      window.onload = function () {
+        recievedurl = window.location.href;
+        var urlfinal = recievedurl.replace("http://localhost:3000/?", "");
+        document.getElementById("inputfield").value = urlfinal;
+        document.getElementById("theform").submit();
+      };
+    </script>
+
+    <h1>Scrapping Data...</h1>
+    <div class="ring"></div>
+
+    <script src="/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
