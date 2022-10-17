@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .forminput {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+        font-size: 1.2rem;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+        border-radius: 0.2rem;
+        background-color: #f6f6f6;
+        border: none;
+        width: 600px;
+        height: 20px;
+        display: block;
+        border-bottom: 0.3rem solid transparent;
+        transition: all 0.3s;
+      }
+
+      .button {
+        width: 270px;
+        height: 80px;
+        border: none;
+        outline: none;
+        background: #2f2f2f;
+        color: #fff;
+        font-size: 22px;
+        border-radius: 40px;
+        text-align: center;
+        box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      
+      .lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #E64848;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    
+    <center>
+      <h1>Making Predictions...</h1>
+      <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+
+      <br><br><br><br><br>
+    <form action="{{url_for('predict')}}" method="post" id="formd">
+      <input
+        type="text"
+        name="reviewOne"
+        value="{{list[0]}}"
+        class="forminput"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewTwo"
+        value="{{list[1]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewThree"
+        value="{{list[2]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewFour"
+        value="{{list[3]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewFive"
+        value="{{list[4]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewSix"
+        value="{{list[5]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewSeven"
+        value="{{list[6]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewEight"
+        value="{{list[7]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewNine"
+        value="{{list[8]}}"
+      />
+      <br />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewTen"
+        value="{{list[9]}}"
+      />
+      <input
+        type="text"
+        class="forminput"
+        name="reviewTen"
+        value="{{list[11]}}"
+      />
+
+      <input type="submit" value="Predict" class="button" name="" id="" />
+    </center>
+    </form>
+
+    <script>
+      window.onload = function () {
+       
+        document.getElementById("formd").submit();
+      };
+    </script>
+  </body>
+
+  <script src="/popup.js"></script>
+</html>
