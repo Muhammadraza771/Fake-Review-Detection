@@ -5,6 +5,6 @@ and predicting fake/spam reviews on e-commerce websites (Amazon).
 
 
 
-![img](/512.png)
+![img](/128.png)
 ## Griffin Aid Chrome extension was developed for the partial requirement of Final Year Projects in BUITEMS (Balochistan university of Information Technology, Engineering and Management Sciences). During the Fall 2018 - Fall 2022 Session. 
 
